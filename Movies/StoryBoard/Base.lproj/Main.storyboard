@@ -31,7 +31,7 @@
                                     <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NkV-yY-ssp">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="498"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dnh-1E-x9x">
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="dnh-1E-x9x">
                                             <size key="itemSize" width="130" height="187"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -70,11 +70,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Movies" id="5ZT-Oq-hzX"/>
+                    <tabBarItem key="tabBarItem" title="Movies" image="list_icon" selectedImage="list_icon" id="5ZT-Oq-hzX"/>
                     <navigationItem key="navigationItem" id="4yC-sj-LYD"/>
                     <connections>
                         <outlet property="collectionView" destination="NkV-yY-ssp" id="m82-OZ-QDW"/>
                         <outlet property="containerView" destination="7D8-kP-3LX" id="HeT-QX-f0d"/>
+                        <outlet property="searchBar" destination="WZC-w1-Jse" id="jIh-xx-et1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,20 +90,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jOa-GG-Vae">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jOa-GG-Vae">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Fk-nH-b5M">
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jOa-GG-Vae" firstAttribute="top" secondItem="vqI-r0-ccS" secondAttribute="top" id="6cP-0Q-5DP"/>
+                            <constraint firstItem="jOa-GG-Vae" firstAttribute="trailing" secondItem="vqI-r0-ccS" secondAttribute="trailing" id="DLm-Jv-Qkd"/>
+                            <constraint firstItem="3Fk-nH-b5M" firstAttribute="bottom" secondItem="vqI-r0-ccS" secondAttribute="bottom" id="FgQ-T9-jNv"/>
+                            <constraint firstItem="jOa-GG-Vae" firstAttribute="leading" secondItem="vqI-r0-ccS" secondAttribute="leading" id="Gti-C5-fue"/>
+                            <constraint firstItem="3Fk-nH-b5M" firstAttribute="leading" secondItem="vqI-r0-ccS" secondAttribute="leading" id="Qi2-jP-Zu7"/>
+                            <constraint firstItem="3Fk-nH-b5M" firstAttribute="trailing" secondItem="vqI-r0-ccS" secondAttribute="trailing" id="dTY-CZ-tFK"/>
+                            <constraint firstItem="3Fk-nH-b5M" firstAttribute="top" secondItem="jOa-GG-Vae" secondAttribute="bottom" id="ndq-hx-Bt1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vqI-r0-ccS"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="Bg4-a8-mhh"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="favorite_empty_icon" selectedImage="favorite_empty_icon" id="Bg4-a8-mhh"/>
+                    <connections>
+                        <outlet property="tableView" destination="3Fk-nH-b5M" id="K8W-wC-7cd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyI-vj-nNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="921"/>
+            <point key="canvasLocation" x="408.80000000000001" y="920.68965517241384"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="i65-9R-qLd">
@@ -173,4 +189,8 @@
             <point key="canvasLocation" x="410" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="favorite_empty_icon" width="22" height="21"/>
+        <image name="list_icon" width="18" height="10"/>
+    </resources>
 </document>

@@ -11,8 +11,9 @@ import UIKit
 
 class MoviesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    let favoriteService = FavoritesRepository()
+    
     var movies: [Movie] = []
-    fileprivate let itemsPerRow: CGFloat = 3
     
     init(movies: [Movie]) {
         self.movies = movies
@@ -32,13 +33,21 @@ class MoviesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesCollectionViewCell", for: indexPath) as! MoviesCollectionViewCell
         let movie = movies[indexPath.row]
         
-        cell.setupView(with: movie)
+        cell.setupView(with: movie, favoriteService: favoriteService)
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let numberOfItemsPerRow = CGFloat(2)
+        let collectionWidth = collectionView.bounds.size.width
+        let cellWidth = collectionWidth / numberOfItemsPerRow
+        let ratio = CGFloat(1.5)
+        let cellHeight = cellWidth * ratio
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
     
-    
-    
+
     
 }

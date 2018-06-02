@@ -41,7 +41,7 @@ class NetWorkClient {
     
     func fetchMovies(search: String, callback: @escaping (Result<MoviesResponse>)-> Void) {
         
-        guard let url = URL(string: "https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=\(search)") else {
+        guard let url = URL(string: "https://api.themoviedb.org/3/search/movie?api_key=42c9d1c2c0578c563f72fd0e2441c9c0&query=\(search)") else {
             return
         }
         

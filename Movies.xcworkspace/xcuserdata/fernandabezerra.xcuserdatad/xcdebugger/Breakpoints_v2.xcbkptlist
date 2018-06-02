@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Movies/Cells/MoviesCollectionViewCell.swift"
-            timestampString = "538680563.989831"
+            timestampString = "545614373.786272"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "setupView(with:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "setupFavoriteIconState()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,61 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Movies/Controllers/MoviesViewController.swift"
-            timestampString = "538867178.853012"
+            filePath = "Movies/FavoritesRepository.swift"
+            timestampString = "545614373.786635"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "fetch()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Movies.MoviesViewController.fetch() -&gt; ()"
-                  moduleName = "Movies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fernandabezerra/dev/Movies/Movies/Controllers/MoviesViewController.swift"
-                  timestampString = "538867179.093381"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "14">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Movies.Result&lt;Movies.MoviesResponse&gt;) -&gt; () in Movies.MoviesViewController.fetch() -&gt; ()"
-                  moduleName = "Movies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fernandabezerra/dev/Movies/Movies/Controllers/MoviesViewController.swift"
-                  timestampString = "538867179.107488"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "29">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movies/Controllers/MoviesViewController.swift"
-            timestampString = "538867178.853413"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "fetch()"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getFavorites()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,13 +41,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Movies/Controllers/MoviesViewController.swift"
-            timestampString = "538867178.853827"
+            filePath = "Movies/FavoritesRepository.swift"
+            timestampString = "545614373.7866859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "fetch()"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/FavoritesRepository.swift"
+            timestampString = "545614373.7867301"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "isFavorite(movie:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/Models/Movie.swift"
+            timestampString = "545614373.786775"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "isEqual(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

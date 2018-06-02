@@ -23,6 +23,7 @@ class MoviesViewController: UIViewController {
     var dataSource: MoviesDataSource?
     @IBOutlet weak var containerView: UIView!
     weak var statusView: StatusView?
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var viewState: State = .loading {
         didSet {
@@ -53,10 +54,15 @@ class MoviesViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         registerCells()
         setupStateViews()
         fetch()
         setupNavigationItem()
+        self.searchBar.delegate = self
+        dataSource = MoviesDataSource(movies: movies)
+        collectionView.dataSource = dataSource
+        collectionView.delegate = dataSource
     }
     
     
@@ -65,13 +71,10 @@ class MoviesViewController: UIViewController {
         let identifier = "MoviesCollectionViewCell"
         let nib = UINib(nibName: identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: identifier)
-
     }
     
     func refreshView(with movies: [Movie]) {
-        dataSource = MoviesDataSource(movies: movies)
-        collectionView.dataSource = dataSource
-        collectionView.delegate = dataSource
+        dataSource?.movies = movies
         collectionView.reloadData()
     }
     
@@ -117,7 +120,12 @@ extension MoviesViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        network.fetchMovies(search: searchBar.text!) { result in
+        guard let searchText = searchBar.text else {
+            return
+        }
+        let newString = searchText.replacingOccurrences(of: " ", with: "+")
+        
+        network.fetchMovies(search: newString) { result in
             searchBar.resignFirstResponder()
             switch result {
             case .success(let response):
